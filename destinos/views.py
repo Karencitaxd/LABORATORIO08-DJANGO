@@ -60,3 +60,21 @@ def editar_destino(request, id):
         'destinos/editar_destino.html',
         {'formulario': formulario}
     )
+
+
+def eliminar_destino(request, id):
+
+    destino = get_object_or_404(
+        DestinoTuristico,
+        id=id
+    )
+
+    if request.method == 'POST':
+        destino.delete()
+        return redirect('index')
+
+    return render(
+        request,
+        'destinos/eliminar_destino.html',
+        {'destino': destino}
+    )
