@@ -1,0 +1,19 @@
+<h1>Destinos Turísticos del Perú</h1>
+
+<hr>
+
+{% for destino in destinos %}
+
+<h2>{{ destino.nombreCiudad }}</h2>
+
+<p>{{ destino.descripcionCiudad }}</p>
+
+<p>Precio: S/. {{ destino.precioTour }}</p>
+
+{% if destino.ofertaTour %}
+<p>🔥 OFERTA ESPECIAL</p>
+{% endif %}
+
+<hr>
+
+{% endfor %}
