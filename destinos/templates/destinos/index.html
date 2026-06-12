@@ -6,26 +6,57 @@
     <title>Destinos Turísticos del Perú</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+</style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <span class="navbar-brand mb-0 h1">
-                🌎 Turismo Perú
-            </span>
-        </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <div class="bg-primary text-white text-center py-5">
-        <h1>Destinos Turísticos del Perú</h1>
-        <p>Descubre los lugares más increíbles de nuestro país</p>
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            🌎 Turismo Perú
+        </a>
+
+        <div class="ms-auto">
+
+            <a href="{% url 'agregar_destino' %}"
+               class="btn btn-success">
+                ➕ Nuevo Destino
+            </a>
+
+        </div>
+
     </div>
+
+</nav>
+
+    <div class="bg-primary text-white text-center py-5 shadow">
+
+    <h1 class="display-4 fw-bold">
+        🌎 Destinos Turísticos del Perú
+    </h1>
+
+    <p class="lead">
+        Descubre los lugares más increíbles de nuestro país
+    </p>
+
+</div>
 
     <div class="container mt-5">
 
-        <div class="row">
+    <div class="row">
 
             {% for destino in destinos %}
 
@@ -83,6 +114,18 @@
         </div>
 
     </div>
+<footer class="bg-dark text-white text-center py-4 mt-5">
 
+    <h5>🌎 Turismo Perú</h5>
+
+    <p class="mb-0">
+        Proyecto desarrollado con Django y Bootstrap
+    </p>
+
+    <small>
+        Laboratorio 08 - Destinos Turísticos
+    </small>
+
+</footer>
 </body>
 </html>
